@@ -1,0 +1,20 @@
+{
+  "usuario": [
+    {
+      "id": "2",
+      "nombre": "Tito Martinez",
+      "age": 24,
+      "email": "tito@gmail.com",
+      "password": "titosuperpass",
+      "ocupation": "Estudiante en la UCM"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "userId": "1",
+      "description": "Hola! 😊 Estoy buscando un par de compañeros de piso para alquilar juntos un apartamento en el centro de madrid durante la temporada escolar ",
+      "date": "sep. 2024"
+    }
+  ]
+}

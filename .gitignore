@@ -1,0 +1,11 @@
+.env.dev
+.env.production
+/node_modules
+/dist
+/build
+/logs
+/tmp
+/cache
+/temp
+/tmp
+/cache

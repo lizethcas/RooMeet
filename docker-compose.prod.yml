@@ -1,0 +1,19 @@
+services:
+   mongo:
+    # definir la ultima version de mongo desde dockerhub
+        image: mongo:latest
+        #nombre del contenedor (opcional)
+        container_name: mongo-prod
+        env_file:
+            - .env.production
+        ports:
+            - "${PORT_MONGODB}:${PORT_MONGODB}"
+        volumes:
+            - mongo_data_prod:/data/db
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+
+
+volumes:
+  mongo_data_prod:
