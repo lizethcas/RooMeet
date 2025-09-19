@@ -11,12 +11,14 @@
     "json-server": "json-server --watch db.json --port 3001",
     "bd-dev": "docker compose -f docker-compose.dev.yml --env-file .env.dev up -d",
     "bd-prod": "docker compose -f docker-compose.prod.yml --env-file .env.production up -d"
-   
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.18.1"
   },
   "devDependencies": {
     "json-server": "^1.0.0-beta.3"

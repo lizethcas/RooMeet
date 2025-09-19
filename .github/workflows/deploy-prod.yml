@@ -1,0 +1,30 @@
+name: Deploy to Render Production
+on:
+  push:
+    branches:
+      - main  # Solo dispara deploy desde la rama main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and Deploy
+        env:
+          DB_URL: ${{ secrets.PROD_DB_URL }}
+          REDIS_URL: ${{ secrets.PROD_REDIS_URL }}
+        run: |
+          npm run build
+          npm run deploy
+      - name: Notify Deployment Success
+        if: success()
+        run: echo "Deployment to production was successful!"
