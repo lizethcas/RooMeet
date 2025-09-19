@@ -23,8 +23,7 @@ jobs:
           DB_URL: ${{ secrets.PROD_DB_URL }}
           REDIS_URL: ${{ secrets.PROD_REDIS_URL }}
         run: |
-          npm run build
-          npm run deploy
+          npm run prod
       - name: Notify Deployment Success
         if: success()
         run: echo "Deployment to production was successful!"
